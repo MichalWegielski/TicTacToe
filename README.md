@@ -1,2 +1,2 @@
 # TicTacToe
-TicTacToe game using Xstate in React.js
+TicTacToe game using Xstate in React.js 
