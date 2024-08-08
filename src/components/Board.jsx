@@ -19,17 +19,24 @@ function range(start, end) {
     .map((_, i) => i + start);
 }
 
-const Board = () => {
+const Board = ({ state, send }) => {
+  const { board } = state.context;
 
-return (
-  <>
-      <StyledBoard>
-          {range(0, 9).map((index) => (
-              <Tile key={index} index={index} onClick={() => console.log(`Clicked ${index}`)} />
-          ))}
-      </StyledBoard>
-  </>
-)
+  return (
+    <StyledBoard>
+      {range(0, 9).map((index) => (
+        <Tile
+          key={index}
+          index={index}
+          value={board[index]}
+          onClick={() => {
+            console.log(`Clicked ${index}`)
+            send({ type: "MOVE", move: index });
+          }}
+        />
+      ))}
+    </StyledBoard>
+  )
 }
 
-export default Board
+export default Board;

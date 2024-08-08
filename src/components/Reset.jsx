@@ -22,10 +22,10 @@ const StyledReset = styled.button`
   }
 `;
 
-const Reset = () => {
+const Reset = ({ send }) => {
   return (
     <>
-        <StyledReset>Reset</StyledReset>
+        <StyledReset onClick={() => send({ type: 'RESET' })}>Reset</StyledReset>
     </>
   )
 }

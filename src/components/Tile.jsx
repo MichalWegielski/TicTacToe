@@ -11,7 +11,7 @@ const StyledTile = styled.div`
   border-right: ${({ index }) => (index % 3 !== 2 ? '3px solid #000060' : 'none')};
   margin: 3px;
   transition: background-color 0.3s;
-  font-size: 4rem;
+  font-size: 2rem;
   color: #FBFBFB;
 
   &:hover {
@@ -20,9 +20,11 @@ const StyledTile = styled.div`
   }
 `;
 
-const Tile = ({ index, onClick }) => {
+const Tile = ({ index, onClick, value }) => {
   return (
-    <StyledTile index={index} onClick={onClick}></StyledTile>
+    <StyledTile index={index} onClick={onClick}>
+      {value}
+    </StyledTile>
   )
 }
 
