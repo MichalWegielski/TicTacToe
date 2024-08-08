@@ -22,7 +22,7 @@ const StyledTile = styled.div`
 
 const Tile = ({ index, onClick, value }) => {
   return (
-    <StyledTile index={index} onClick={onClick}>
+    <StyledTile index={index} onClick={onClick} role="boardCell">
       {value}
     </StyledTile>
   )
